@@ -1,4 +1,6 @@
 #!/usr/bin/env node
 greet = require("../index.js");
-var name = process.argv[2];
-console.log("hello, " + name);
+var argv = require('minimist')(process.argv.slice(2));
+var name = argv._[0];
+var drunk = argv["drunk"];
+console.log(greet(name,drunk));
